@@ -11,10 +11,10 @@ export class AppComponent {
   @Input() public seccion : Array<Seccion>=[];
 
   public guardarAlumnos(nuevo:Alumno):void{
-    this.listaAlumno.push(nuevo);
+    this.listarAlumno.push(nuevo);
   }
 
-  public listaAlumno : Array<Alumno>=[
+  public listarAlumno : Array<Alumno>=[
     {
       rutAlumno:0,
       nombreAlumno:'',
@@ -25,7 +25,7 @@ export class AppComponent {
   ]
 
 
-  public listaSeccion : Array<Seccion>=[
+  public listarSeccion : Array<Seccion>=[
     {
       idSeccion:0,
       nombreSeccion:''
@@ -33,7 +33,7 @@ export class AppComponent {
   ]
 
   public guardarSeccion(nuevo:Seccion):void{
-    this.listaSeccion.push(nuevo);
+    this.listarSeccion.push(nuevo);
   }
 
 

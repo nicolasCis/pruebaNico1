@@ -8,6 +8,7 @@ import{Seccion} from '../../modelo/seccion';
 })
 export class FormularioSeccionComponent {
   @Output() public salvar = new EventEmitter<Secciones>();
+  @Input() public seccione !: Array<Seccion>;
 
   public seccion : Seccion={
     idSeccion:0,
@@ -24,11 +25,6 @@ export class FormularioSeccionComponent {
     this.seccion.nombreSeccion = elemento1.value;
   }
 
-  public guardar(evento:Event):void{
-    const copia : Seccion = {...this.seccion};
-    this.salvar.emit(copia);
-    this.seccion.idSeccion=0,
-    this.seccion.nombreSeccion=''
-  }
+
 
 }

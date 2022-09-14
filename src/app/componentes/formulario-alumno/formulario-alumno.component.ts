@@ -50,6 +50,8 @@ export class FormularioAlumnoComponent {
     this.alumnos.edadAlumno = Number.parseInt(elemento3.value);
   }
 
-
+  public cambiarOpc(evento:Event):void{
+    const elemento4 = evento.target as HTMLSelectElement;
+  }
 
 }
