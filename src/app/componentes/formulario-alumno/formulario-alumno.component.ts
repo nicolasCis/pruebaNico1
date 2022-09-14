@@ -30,16 +30,6 @@ export class FormularioAlumnoComponent {
   }
 
 
-  public guardar(evento:Event):void{
-    const cop : Alumno = {...this.alumno};
-    this.salvarAlumnos.emit(cop);
-    this.alumnos.rutAlumno=0;
-    this.alumnos.nombreAlumno='';
-    this.alumnos.apellidoAlumno='';
-    this.alumnos.edadAlumno=0;
-    this.alumnos.seccionAlumno='Programacion'
-  }
-
   public rutAlumno(evento:Event):void{
     const elemento0 = evento.target as HTMLInputElement;
     this.alumnos.rutAlumno = Number.parseInt(elemento0.value);
@@ -59,5 +49,7 @@ export class FormularioAlumnoComponent {
     const elemento3 = evento.target as HTMLInputElement;
     this.alumnos.edadAlumno = Number.parseInt(elemento3.value);
   }
+
+
 
 }
