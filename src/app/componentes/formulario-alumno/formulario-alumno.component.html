@@ -16,7 +16,7 @@
     <input type="number" name="edadAlumno" (input)="edadAlumno($event)">
   </fieldset>
   <select name="seccion">
-    <option *ngFor="let x of secciones">{{x.idSeccion}}</option>
+    <option *ngFor="let x of secciones">{{x.idSeccion}}  {{x.nombreSeccion}}</option>
   </select>
   <button (click)="guarda($event)">guardar</button>
 </section>

@@ -1,6 +1,5 @@
 <app-formulario-seccion (salvar)="guardarSeccion($event)"></app-formulario-seccion>
 <app-listar-seccion [listaSeccion]="listarSeccion"></app-listar-seccion>
-
-
-<app-formulario-alumno (salvarAlumnos)="guardarAlumnos($event)"></app-formulario-alumno>
+<hr>
+<app-formulario-alumno (salvarAlumnos)="guardarAlumnos($event)"  [secciones]="listarSeccion"></app-formulario-alumno>
 <app-listar-alumno [listaAlumno]="listarAlumno" ></app-listar-alumno>
