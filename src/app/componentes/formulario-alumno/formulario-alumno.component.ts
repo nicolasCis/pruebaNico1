@@ -10,7 +10,7 @@ import {Seccion} from '../../modelo/seccion';
   styleUrls: ['./formulario-alumno.component.scss']
 })
 export class FormularioAlumnoComponent {
-  @Input() public alumno !: Array<Alumno>;
+  @Input() public estoyalumno !: Array<Alumno>;
   @Input() public secciones !: Array<Seccion>;
   @Output() public salvarAlumnos = new EventEmitter<Alumno>();
 
@@ -54,4 +54,9 @@ export class FormularioAlumnoComponent {
     const elemento4 = evento.target as HTMLSelectElement;
   }
 
+
+  public guarda(evento:Event):void{
+    const copia2 : Alumno = {...this.alumnos};
+    this.salvarAlumnos.emit(copia2);
+  }
 }

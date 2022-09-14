@@ -15,4 +15,8 @@
     <p>ingrese edad del alumno:</p>
     <input type="number" name="edadAlumno" (input)="edadAlumno($event)">
   </fieldset>
+  <select name="seccion">
+    <option *ngFor="let x of secciones">{{x.idSeccion}}</option>
+  </select>
+  <button (click)="guarda($event)">guardar</button>
 </section>

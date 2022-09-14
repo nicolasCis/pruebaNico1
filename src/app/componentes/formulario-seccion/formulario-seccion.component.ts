@@ -7,7 +7,7 @@ import{Seccion} from '../../modelo/seccion';
   styleUrls: ['./formulario-seccion.component.scss']
 })
 export class FormularioSeccionComponent {
-  @Output() public salvar = new EventEmitter<Secciones>();
+  @Output() public salvar = new EventEmitter<Seccion>();
   @Input() public seccione !: Array<Seccion>;
 
   public seccion : Seccion={
@@ -25,6 +25,9 @@ export class FormularioSeccionComponent {
     this.seccion.nombreSeccion = elemento1.value;
   }
 
-
+  public guardar(evento:Event):void{
+    const copia : Seccion = {...this.seccion};
+    this.salvar.emit(copia);
+  }
 
 }
