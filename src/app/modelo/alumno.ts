@@ -1,9 +1,9 @@
-export type Seccion = 'BaseDeDatos' |'Programacion'
+export type Secciones = 'BaseDeDatos' |'Programacion'
 
 export interface Alumno {
   rutAlumno:Number,
   nombreAlumno:String,
   apellidoAlumno:String,
   edadAlumno:Number,
-  seccionAlumno:Seccion
+  seccionAlumno:Secciones
 }
