@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 import {Alumno, Secciones} from '../../modelo/alumno';
 import {Seccion} from '../../modelo/seccion';
 
@@ -12,6 +12,7 @@ import {Seccion} from '../../modelo/seccion';
 export class FormularioAlumnoComponent {
   @Input() public alumno !: Array<Alumno>;
   @Input() public secciones !: Array<Seccion>;
+  @Output() public salvarAlumnos = new EventEmitter<Alumno>();
 
   public alumnos : Alumno = {
     rutAlumno:0,
@@ -26,6 +27,37 @@ export class FormularioAlumnoComponent {
     idSeccion:0,
     nombreSeccion:''
 
+  }
+
+
+  public guardar(evento:Event):void{
+    const cop : Alumno = {...this.alumno};
+    this.salvarAlumnos.emit(cop);
+    this.alumnos.rutAlumno=0;
+    this.alumnos.nombreAlumno='';
+    this.alumnos.apellidoAlumno='';
+    this.alumnos.edadAlumno=0;
+    this.alumnos.seccionAlumno='Programacion'
+  }
+
+  public rutAlumno(evento:Event):void{
+    const elemento0 = evento.target as HTMLInputElement;
+    this.alumnos.rutAlumno = Number.parseInt(elemento0.value);
+  }
+
+  public nombreAlumno(evento:Event):void{
+    const elemento1 = evento.target as HTMLInputElement;
+    this.alumnos.nombreAlumno = elemento1.value;
+  }
+
+  public apellidoAlumno(evento:Event):void{
+    const elemento2 = evento.target as HTMLInputElement;
+    this.alumnos.apellidoAlumno = elemento2.value;
+  }
+
+  public edadAlumno(evento:Event):void{
+    const elemento3 = evento.target as HTMLInputElement;
+    this.alumnos.edadAlumno = Number.parseInt(elemento3.value);
   }
 
 }
